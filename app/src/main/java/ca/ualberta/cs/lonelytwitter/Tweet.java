@@ -11,6 +11,7 @@ public class Tweet {
 
     public Tweet(String message){
         this.message = message;
+        this.date = new Date();
     }
 
     public Tweet(String message, Date date){
@@ -18,11 +19,22 @@ public class Tweet {
         this.date = date;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(String message) throws TweetTooLongException{
+        if(message.length() > 140){
+            throw new TweetTooLongException();
+        }
         this.message = message;
     }
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public Date getDate() {
+        return date;
     }
 }
