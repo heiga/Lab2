@@ -7,4 +7,10 @@ public class ImportantTweet extends Tweet{
     public ImportantTweet(String message){
         super(message);
     }
+
+    //not operationional, for flagging
+    @Override
+    public Boolean isImportant(){
+        return Boolean.TRUE;
+    }
 }
